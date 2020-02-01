@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movies/src/routes/routes.dart';
  
 void main() => runApp(MyApp());
  
@@ -8,16 +9,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Material App Bar'),
-        ),
-        body: Center(
-          child: Container(
-            child: Text('Hello World'),
-          ),
-        ),
-      ),
+      initialRoute: '/',
+      routes: getRoutes(),
     );
   }
 }
