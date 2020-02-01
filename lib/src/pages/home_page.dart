@@ -5,8 +5,17 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Home Page')),
+      appBar: AppBar(
+        title: Text('Home Page'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {}
+          )
+        ],
+      ),
       body: _createCardSwiper(),
+
     );
   }
 
