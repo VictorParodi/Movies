@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:movies/src/widgets/card_swiper.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -8,37 +8,14 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Home Page'),
         actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.search),
-            onPressed: () {}
-          )
+          IconButton(icon: Icon(Icons.search), onPressed: () {})
         ],
       ),
       body: _createCardSwiper(),
-
     );
   }
 
   Widget _createCardSwiper() {
-    return (
-      Container(
-        padding: EdgeInsets.only(top: 10.0),
-        height: 300.0,
-        width: double.infinity,
-        child: Swiper(
-          layout: SwiperLayout.STACK,
-          itemCount: 5,
-          itemWidth: 300.0,
-          itemBuilder: (context, index) {
-            return (
-              Image(
-                image: NetworkImage("http://via.placeholder.com/350x150"),
-                fit: BoxFit.fill,
-              )
-            );
-          },
-        ),
-      )
-    );
+    return CardSwiper(movies: [1, 2, 3, 4, 5]);
   }
 }
